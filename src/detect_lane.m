@@ -17,7 +17,7 @@ function [line_izq, line_dcha] = detect_lane(f, Q_izq_est, Q_dcha_est)
     %f_gray = bsxfun(@times, f_gray, cast(mask2, 'like', f_gray));
 
     %% Mascara lineas en escala grises
-    f_white = whiteMask2(f_copy);
+    f_white = whiteMask(f_copy);
     %f_white = f_gray>(quantile(f_gray(:), 0.99)-5);  %quantile me da el valor de casi mayor(0.99) intensidad de la imagen
     %% Mascara lineas amarillas
     f_yellow = yellowMask2(f_copy);
